@@ -9,11 +9,12 @@ class AddProductButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
+        backgroundColor: theme.primaryColorLight,
         elevation: 2,
         shadowColor: const Color(0xFFAAAACC),
         padding: const EdgeInsets.symmetric(horizontal: 19, vertical: 9),
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       child: Text(
