@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
+const _darkGreenColor = Color(0xff003813);
+const _greenColor = Color(0xff3BB850);
+
 final lightThemeData = ThemeData(
   fontFamily: "Poppins",
   scaffoldBackgroundColor: Colors.white,
-  primaryColor: const Color(0xff003813),
-  primaryColorLight: const Color(0xff3BB850),
+  primaryColor: _darkGreenColor,
+  primaryColorLight: _greenColor,
   textTheme: const TextTheme(
-      bodyLarge: TextStyle(fontSize: 16, color: Color(0xff003813)),
-      bodyMedium: TextStyle(fontSize: 14, color: Color(0xff003813)),
-      bodySmall: TextStyle(fontSize: 12, color: Color(0xff003813)),
-      titleMedium: TextStyle(fontSize: 16, color: Color(0xff003813), fontWeight: FontWeight.w600)),
+      bodyLarge: TextStyle(fontSize: 16, color: _darkGreenColor),
+      bodyMedium: TextStyle(fontSize: 14, color: _darkGreenColor),
+      bodySmall: TextStyle(fontSize: 12, color: _darkGreenColor),
+      titleMedium: TextStyle(fontSize: 16, color: _darkGreenColor, fontWeight: FontWeight.w600)),
 );
