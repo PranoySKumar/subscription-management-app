@@ -12,7 +12,6 @@ class HomeScreen extends StatelessWidget {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: const [
           Text('hello world'),
           AddProductButton(),
-          ProductListItem(title: "Aloe vera Gelly", price: 213.00)
         ]),
       ),
     );

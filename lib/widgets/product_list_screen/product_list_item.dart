@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:product_app/utils/asset_repo.dart';
 import 'package:product_app/widgets/product_list_screen/add_product_button.dart';
 
 class ProductListItem extends StatelessWidget {
@@ -14,15 +13,15 @@ class ProductListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Container(
+      height: 156,
       width: double.infinity,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(14)),
         boxShadow: [
-          BoxShadow(color: Color.fromARGB(24, 0, 51, 26), blurRadius: 25, spreadRadius: 0),
+          BoxShadow(color: Color.fromRGBO(0, 0, 51, 0.1), blurRadius: 25, spreadRadius: 0),
         ],
       ),
-      height: 156,
       padding: const EdgeInsets.symmetric(horizontal: 23),
       child: Center(
           child: Row(
@@ -51,6 +50,7 @@ class ProductListItem extends StatelessWidget {
             ],
           ),
           Image.asset(
+            width: 130.35,
             imageUrl,
           )
         ],

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:product_app/screens/product_list_screen.dart';
 import 'package:product_app/theme/light_theme.dart';
-
-import 'screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightThemeData,
-      home: const HomeScreen(),
+      home: const ProductListScreen(),
     );
   }
 }
