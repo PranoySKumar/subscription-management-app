@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:product_app/widgets/product_list_screen/add_product_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Hi"),
+    return Scaffold(
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [Text('hello world'), AddProductButton()]),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_app/theme/light_theme.dart';
 
 import 'screens/home_screen.dart';
 
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
-      home: HomeScreen(),
+    return MaterialApp(
+      theme: lightThemeData,
+      home: const HomeScreen(),
     );
   }
 }
