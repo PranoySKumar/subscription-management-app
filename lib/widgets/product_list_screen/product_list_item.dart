@@ -5,8 +5,10 @@ import 'package:product_app/widgets/product_list_screen/add_product_button.dart'
 class ProductListItem extends StatelessWidget {
   final String title;
   final double price;
+  final String imageUrl;
 
-  const ProductListItem({super.key, required this.title, required this.price});
+  const ProductListItem(
+      {super.key, required this.title, required this.price, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,7 @@ class ProductListItem extends StatelessWidget {
             ],
           ),
           Image.asset(
-            AssetRepo.product1,
+            imageUrl,
           )
         ],
       )),
