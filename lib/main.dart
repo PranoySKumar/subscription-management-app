@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:product_app/screens/delivery_agreement_screen.dart';
+import 'package:product_app/screens/home_screen.dart';
 import 'package:product_app/theme/light_theme.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightThemeData,
-      home: const DeliveryAgreementScreen(),
+      home: const HomeScreen(),
     );
   }
 }
