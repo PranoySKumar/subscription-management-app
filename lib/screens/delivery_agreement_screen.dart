@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:product_app/utils/asset_repo.dart';
+import 'package:product_app/widgets/delivery_agreement_screen.dart/payment_info_card.dart';
 import 'package:product_app/widgets/delivery_agreement_screen.dart/gift_card_poster.dart';
 
 class DeliveryAgreementScreen extends StatelessWidget {
@@ -32,8 +33,19 @@ class DeliveryAgreementScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(
-        child: GiftCardPoster(),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            GiftCardPoster(),
+            SizedBox(
+              height: 10,
+            ),
+            PaymentInfoCard()
+          ],
+        ),
       ),
     );
   }
