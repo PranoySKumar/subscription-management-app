@@ -6,4 +6,5 @@ class AssetRepo {
   //icons
   static const String filterIcon = "assets/icons/filter_icon.svg";
   static const String searchIcon = "assets/icons/search_icon.svg";
+  static const String handShakeIcon = "assets/icons/handshake_icon.svg";
 }
