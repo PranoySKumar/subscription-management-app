@@ -8,6 +8,7 @@ class PaymentInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Container(
+      width: double.infinity,
       padding: const EdgeInsets.only(bottom: 16, top: 10, left: 24, right: 24),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -17,38 +18,56 @@ class PaymentInfoCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Column(
-            children: [
-              Image.asset(
-                AssetRepo.cardboardBox,
-                width: 72.72,
-                height: 48.7,
-              ),
-              Text(
-                "Next Delivery   : August",
-                style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w700),
-              )
-            ],
+          const _SingleInfoItem(
+            imageUrl: AssetRepo.cardboardBox,
+            info: "Next Delivery   : August",
+            imageWidth: 72.72,
+            imageHeight: 48.7,
           ),
-          const VerticalDivider(
-            width: 0.5,
-            color: Color(0xffBFE989),
+          Container(
+            width: 1,
+            height: 75,
+            color: const Color(0xffBFE989),
           ),
-          Column(
-            children: [
-              Image.asset(
-                AssetRepo.wallet,
-                width: 72.72,
-                height: 50.79,
-              ),
-              Text(
-                "To Pay    : 910,00 kr",
-                style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w700),
-              )
-            ],
+          const _SingleInfoItem(
+            imageUrl: AssetRepo.wallet,
+            info: "To Pay    : 910,00 kr",
+            imageWidth: 72.72,
+            imageHeight: 50.79,
           )
         ],
       ),
+    );
+  }
+}
+
+class _SingleInfoItem extends StatelessWidget {
+  final String imageUrl;
+  final double imageWidth;
+  final double imageHeight;
+  final String info;
+  const _SingleInfoItem(
+      {super.key,
+      required this.imageUrl,
+      required this.info,
+      required this.imageWidth,
+      required this.imageHeight});
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+    return Column(
+      children: [
+        Image.asset(
+          imageUrl,
+          width: imageWidth,
+          height: imageHeight,
+        ),
+        Text(
+          info,
+          style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w700),
+        )
+      ],
     );
   }
 }

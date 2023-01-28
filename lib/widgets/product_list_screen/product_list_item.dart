@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:product_app/widgets/product_list_screen/add_product_button.dart';
+import 'package:product_app/widgets/common/green_button.dart';
 
 class ProductListItem extends StatelessWidget {
   final String title;
@@ -46,7 +46,7 @@ class ProductListItem extends StatelessWidget {
               const SizedBox(
                 height: 23,
               ),
-              const AddProductButton()
+              const GreenButton(label: "Add Product")
             ],
           ),
           Image.asset(
