@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AddProductButton extends StatelessWidget {
+class GreenButton extends StatelessWidget {
   final String label;
   final Icon? icon;
   final double? width;
-  const AddProductButton({super.key, required this.label, this.icon, this.width});
+  const GreenButton({super.key, required this.label, this.icon, this.width});
 
   @override
   Widget build(BuildContext context) {
