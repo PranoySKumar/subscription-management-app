@@ -3,6 +3,8 @@ class AssetRepo {
   static const String product2 = "assets/images/product_2.png";
   static const String product3 = "assets/images/product_3.png";
   static const String gift = "assets/images/gift.png";
+  static const String cardboardBox = "assets/images/cardboard_box.png";
+  static const String wallet = "assets/images/wallet.png";
 
   //icons
   static const String filterIcon = "assets/icons/filter_icon.svg";
