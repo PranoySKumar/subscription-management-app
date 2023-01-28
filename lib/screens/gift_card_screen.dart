@@ -14,6 +14,9 @@ class ProductListWithGiftCardScreen extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: theme.primaryColor, //change your color here
+        ),
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),

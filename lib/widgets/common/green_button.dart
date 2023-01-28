@@ -4,16 +4,17 @@ class GreenButton extends StatelessWidget {
   final String label;
   final Icon? icon;
   final double? width;
-  const GreenButton({super.key, required this.label, this.icon, this.width});
+  final VoidCallback? onPressed;
+  const GreenButton({super.key, required this.label, this.icon, this.width, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed ?? () {},
       style: ElevatedButton.styleFrom(
         backgroundColor: theme.primaryColorLight,
-        elevation: 2,
+        elevation: 1,
         shadowColor: const Color(0xFFAAAACC),
         padding: const EdgeInsets.symmetric(horizontal: 19, vertical: 9),
         shape: const RoundedRectangleBorder(

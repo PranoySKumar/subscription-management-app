@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:product_app/screens/delivery_agreement_screen.dart';
 import 'package:product_app/screens/gift_card_screen.dart';
+import 'package:product_app/screens/home_screen.dart';
+import 'package:product_app/screens/product_list_screen.dart';
 import 'package:product_app/theme/light_theme.dart';
 
 void main() {
@@ -13,7 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightThemeData,
-      home: const ProductListWithGiftCardScreen(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const HomeScreen(),
+        "/product-list": ((context) => const ProductListScreen()),
+        "/delivery-agreement-list": ((context) => const DeliveryAgreementScreen()),
+        "/giftcard-list": ((context) => const ProductListWithGiftCardScreen())
+      },
     );
   }
 }

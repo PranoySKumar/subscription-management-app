@@ -15,6 +15,9 @@ class DeliveryAgreementScreen extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: theme.primaryColor, //change your color here
+        ),
         elevation: 0,
         backgroundColor: theme.scaffoldBackgroundColor,
         centerTitle: true,
@@ -44,7 +47,9 @@ class DeliveryAgreementScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const GiftCardPoster(),
+                GestureDetector(
+                    onTap: (() => Navigator.pushNamed(context, "/giftcard-list")),
+                    child: const GiftCardPoster()),
                 const SizedBox(
                   height: 10,
                 ),
@@ -99,9 +104,10 @@ class DeliveryAgreementScreen extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                const GreenButton(
+                GreenButton(
                   label: "Add More Products",
-                  icon: Icon(
+                  onPressed: (() => Navigator.pushNamed(context, "/product-list")),
+                  icon: const Icon(
                     Icons.keyboard_arrow_right_rounded,
                     color: Colors.white,
                   ),
