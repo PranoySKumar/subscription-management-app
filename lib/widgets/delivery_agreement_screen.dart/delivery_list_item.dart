@@ -22,91 +22,144 @@ class DeliveryListItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Aloe vera Gelly",
-                    style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
-                  ),
-                  const SizedBox(
-                    height: 22.5,
-                  ),
-                  const Text(
-                    "Price        : kr 213.00 ",
-                  ),
-                  const SizedBox(
-                    height: 19,
-                  ),
-                  _QuantityWidget(theme: theme),
-                  const SizedBox(
-                    height: 19,
-                  ),
-                  const Text(
-                    "To pay    : kr 426.00",
-                  )
-                ],
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    AssetRepo.product1,
-                    width: 117,
-                    height: 143,
-                  ),
-                  Container(
-                    height: 35,
-                    width: 35,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black26, width: 0.5),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Icon(
-                      Icons.delete_outline_rounded,
-                      size: 18,
-                      color: theme.primaryColor,
-                    ),
-                  )
-                ],
-              ),
+              _ProductInfoWidget(theme: theme),
+              _ProductImageWidget(theme: theme),
             ],
           ),
-          Row(
-            children: [
-              const Text("Delivery Frequency  :"),
-              const SizedBox(
-                width: 51,
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
-                decoration: BoxDecoration(
-                    border: Border.all(color: theme.primaryColorLight, width: 0.5),
-                    borderRadius: BorderRadius.circular(8)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(" 2 months"),
-                    SizedBox(
-                      width: 11,
-                    ),
-                    Icon(Icons.keyboard_arrow_down_rounded)
-                  ],
-                ),
-              )
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text("Next Delivery             :"),
-              SizedBox(
-                width: 2,
-              ),
-              Expanded(child: Text("2 pcs in September 2022, then 2 pcs in november 2022"))
-            ],
-          ),
+          _DeliveryFrequencySelectionWidget(theme: theme),
+          const _NextDeliveryWidget(),
         ],
       ),
+    );
+  }
+}
+
+class _ProductInfoWidget extends StatelessWidget {
+  const _ProductInfoWidget({
+    Key? key,
+    required this.theme,
+  }) : super(key: key);
+
+  final ThemeData theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Aloe vera Gelly",
+          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+        ),
+        const SizedBox(
+          height: 22.5,
+        ),
+        const Text(
+          "Price        : kr 213.00 ",
+        ),
+        const SizedBox(
+          height: 19,
+        ),
+        _QuantityWidget(theme: theme),
+        const SizedBox(
+          height: 19,
+        ),
+        const Text(
+          "To pay    : kr 426.00",
+        )
+      ],
+    );
+  }
+}
+
+class _NextDeliveryWidget extends StatelessWidget {
+  const _NextDeliveryWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        Text("Next Delivery             :"),
+        SizedBox(
+          width: 2,
+        ),
+        Expanded(child: Text("2 pcs in September 2022, then 2 pcs in november 2022"))
+      ],
+    );
+  }
+}
+
+class _DeliveryFrequencySelectionWidget extends StatelessWidget {
+  const _DeliveryFrequencySelectionWidget({
+    Key? key,
+    required this.theme,
+  }) : super(key: key);
+
+  final ThemeData theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Text("Delivery Frequency  :"),
+        const SizedBox(
+          width: 51,
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
+          decoration: BoxDecoration(
+              border: Border.all(color: theme.primaryColorLight, width: 0.5),
+              borderRadius: BorderRadius.circular(8)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(" 2 months"),
+              SizedBox(
+                width: 11,
+              ),
+              Icon(Icons.keyboard_arrow_down_rounded)
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class _ProductImageWidget extends StatelessWidget {
+  const _ProductImageWidget({
+    Key? key,
+    required this.theme,
+  }) : super(key: key);
+
+  final ThemeData theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Image.asset(
+          AssetRepo.product1,
+          width: 117,
+          height: 143,
+        ),
+        Container(
+          height: 35,
+          width: 35,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.black26, width: 0.5),
+              borderRadius: BorderRadius.circular(20)),
+          child: Icon(
+            Icons.delete_outline_rounded,
+            size: 18,
+            color: theme.primaryColor,
+          ),
+        )
+      ],
     );
   }
 }
