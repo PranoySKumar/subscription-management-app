@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:product_app/utils/asset_repo.dart';
 
 class DeliveryListItem extends StatelessWidget {
-  const DeliveryListItem({super.key});
+  final String imageUrl;
+  const DeliveryListItem({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 14),
       padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 13),
       decoration: BoxDecoration(
           color: Colors.white,
@@ -23,7 +23,10 @@ class DeliveryListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _ProductInfoWidget(theme: theme),
-              _ProductImageWidget(theme: theme),
+              _ProductImageWidget(
+                theme: theme,
+                imageUrl: imageUrl,
+              ),
             ],
           ),
           _DeliveryFrequencySelectionWidget(theme: theme),
@@ -130,9 +133,11 @@ class _DeliveryFrequencySelectionWidget extends StatelessWidget {
 }
 
 class _ProductImageWidget extends StatelessWidget {
+  final imageUrl;
   const _ProductImageWidget({
     Key? key,
     required this.theme,
+    this.imageUrl,
   }) : super(key: key);
 
   final ThemeData theme;
@@ -143,7 +148,7 @@ class _ProductImageWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(
-          AssetRepo.product1,
+          imageUrl,
           width: 117,
           height: 143,
         ),
