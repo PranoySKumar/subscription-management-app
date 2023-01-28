@@ -5,6 +5,7 @@ class AssetRepo {
   static const String gift = "assets/images/gift.png";
   static const String cardboardBox = "assets/images/cardboard_box.png";
   static const String wallet = "assets/images/wallet.png";
+  static const String giftCard = "assets/images/gift_card.png";
 
   //icons
   static const String filterIcon = "assets/icons/filter_icon.svg";
