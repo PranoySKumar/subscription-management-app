@@ -21,7 +21,7 @@ class GreenButton extends StatelessWidget {
         ),
       ),
       child: SizedBox(
-        width: width ?? 127,
+        width: width ?? 97,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
