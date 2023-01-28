@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:product_app/utils/asset_repo.dart';
 import 'package:product_app/widgets/product_list_screen/product_list_item.dart';
 
@@ -35,7 +36,20 @@ class ProductListScreen extends StatelessWidget {
                 const SizedBox(
                   height: 18,
                 ),
-                const ProductSearchBar()
+                Row(
+                  children: [
+                    // const Expanded(child: ProductSearchBar()),
+                    Expanded(child: SearchBarTextField()),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    SvgPicture.asset(
+                      AssetRepo.filterIcon,
+                      width: 38,
+                      height: 38,
+                    ),
+                  ],
+                )
               ],
             ),
           ),
